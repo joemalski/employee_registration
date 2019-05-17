@@ -7,18 +7,6 @@ import pathlib as path
 import modules.utilities as util
 import modules.textgui as gui
 
-employee = {
-    'id' : '',
-    'first_name' : '',
-    'last_name' : '',
-    'gender' : '',
-    'birthdate' : '',
-    'street' : '',
-    'city' : '',
-    'state' : '',
-    'zip_code' : ''
-}
-
 def initReg():
     raw_path = path.Path('./flat_files/')
     file_to_open = raw_path / 'id.txt'
@@ -28,12 +16,29 @@ def initReg():
     runEntry(current_id[12])
     id_file.close()
 
-def writeEntry():
-    print(employee)
+def writeEntry(current_id, employee):
+    raw_path = path.Path('./flat_files/')
+    file_to_open = raw_path / 'employee.txt'
+    
+    emp_file = open(file_to_open, 'a')
+    emp_file.write(str(employee)+',')
+    emp_file.close()
 
 def runEntry(current_id):
     util.clearScreen()
     gui.registrationBox()
+
+    employee = {
+        'id' : '',
+        'first_name' : '',
+        'last_name' : '',
+        'gender' : '',
+        'birthdate' : '',
+        'street' : '',
+        'city' : '',
+        'state' : '',
+        'zip_code' : ''
+    }
 
     print()
     print('ID: ', current_id)
@@ -53,7 +58,7 @@ def runEntry(current_id):
         res = input('Save? Y/N, Type C to cancel: ')
         if res == 'Y' or res == 'y':
             print('save')
-            writeEntry()
+            writeEntry(current_id, employee)
             flag = False
         elif res == 'N' or res == 'n':
             runEntry(current_id)
