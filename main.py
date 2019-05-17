@@ -5,6 +5,7 @@
 
 import modules.utilities as util
 import modules.textgui as gui
+import registration as reg
 
 # selection control
 loop_flag = False
@@ -14,7 +15,7 @@ while loop_flag == False:
     select = input('Select your option: ')
 
     if select == '1':
-        print('option 1 run you modules here!')
+        reg.initReg()
         loop_flag = True
     elif select == '2':
         print('option 2 run you modules here!')
