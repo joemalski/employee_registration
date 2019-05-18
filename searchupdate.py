@@ -8,12 +8,31 @@ import modules.utilities as util
 import modules.textgui as gui
 
 def init_search_update():
-    util.clear_screen()
-    gui.search_update_box()
 
-    print()
-    id = int(input('Enter ID to search: '))
+    # selection control
+    flag = True
+    while flag == True:
+        util.clear_screen()
+        gui.search_update_box()
+        res = input('Select your option: ')
 
+        if res == '1':
+            id = input('Enter ID: ')
+            check_id = util.check_emp_id(int(id), True)
+            if check_id == False:
+                input('ID: '+id+' is NOT Found! Press Enter to try again...')
+            else:
+                input()
+        elif res == '2':
+            input('You selected: 2')
+        elif res == '3':
+            flag = False
+        else:
+            input('Incorrect option selected. Please try again!')
+
+
+
+    '''
     raw_path = path.Path('./flat_files/')
     file_to_open = raw_path / 'employee.txt'
     employee_file = open(file_to_open, 'r+')
@@ -40,6 +59,7 @@ def init_search_update():
     else:
         print()
         res = input('Update [U], Delete [D], Cancel [C]: ')
+    '''
 
 
 

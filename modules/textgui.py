@@ -35,4 +35,8 @@ def search_update_box():
     print('|                                                         |')
     print('|             S E A R C H  &  U P D A T E :               |')
     print('|                                                         |')
+    print('|          [1] - Search by ID (then Update/Delete)        |')
+    print('|          [2] - Show All Employee                        |')
+    print('|          [3] - Back                                     |')
+    print('|                                                         |')
     print('|---------------------------------------------------------|')
