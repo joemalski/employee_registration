@@ -7,7 +7,7 @@ import pathlib as path
 import modules.utilities as util
 import modules.textgui as gui
 
-def init_reg():
+def init_registration():
     run_entry(util.get_current_id())    
 
 def save_entry(current_id, employee):

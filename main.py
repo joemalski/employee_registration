@@ -6,21 +6,21 @@
 import modules.utilities as util
 import modules.textgui as gui
 import registration as reg
+import searchupdate as search
 
 # selection control
 flag = True
 while flag == True:
     util.clear_screen()
     gui.main_option_box()
-    select = input('Select your option: ')
+    res = input('Select your option: ')
 
-    if select == '1':
-        reg.init_reg()
-    elif select == '2':
-        print('option 2 run you modules here!')
-        flag = False
-    elif select == '3':
-        print('option 3 run you modules here!')
+    if res == '1':
+        reg.init_registration()
+    elif res == '2':
+        search.init_search_update()
+    elif res == '3':
+        print('Bye!')
         flag = False
     else:
         input('Incorrect option selected. Please try again!')

@@ -3,9 +3,11 @@
 # Description: Prints make shift text GUI.
 # By: Joel F. Malinao
 
+title = 'Employee Registration System v1.0'
+
 def main_option_box():
     print('|---------------------------------------------------------|')
-    print('|             Employee Registration System v1.0           |')
+    print('|             '+title+'           |')
     print('|---------------------------------------------------------|')
     print('|                                                         |')
     print('|                    O P T I O N S  :                     |')
@@ -18,7 +20,7 @@ def main_option_box():
 
 def registration_box():
     print('|---------------------------------------------------------|')
-    print('|             Employee Registration System v1.0           |')
+    print('|             '+title+'           |')
     print('|---------------------------------------------------------|')
     print('|                                                         |')
     print('|                R E G I S T R A T I O N :                |')
@@ -26,5 +28,11 @@ def registration_box():
     print('|---------------------------------------------------------|')
 
 
-
-
+def search_update_box():
+    print('|---------------------------------------------------------|')
+    print('|             '+title+'           |')
+    print('|---------------------------------------------------------|')
+    print('|                                                         |')
+    print('|             S E A R C H  &  U P D A T E :               |')
+    print('|                                                         |')
+    print('|---------------------------------------------------------|')
