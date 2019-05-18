@@ -7,17 +7,17 @@ import pathlib as path
 import modules.utilities as util
 import modules.textgui as gui
 
-def initReg():
-    runEntry(util.getCurrentID())    
+def init_reg():
+    run_entry(util.get_current_id())    
 
-def saveEntry(current_id, employee):
+def save_entry(current_id, employee):
     raw_path = path.Path('./flat_files/')
     file_to_open = raw_path / 'employee.txt'
     
     emp_file = open(file_to_open, 'a')
     emp_file.write(str(employee)+',')
     emp_file.close()
-    util.updateCurrentID(current_id)
+    util.update_current_id(current_id)
     
     print()
     flag = True
@@ -26,14 +26,16 @@ def saveEntry(current_id, employee):
         print('res: ', res)
         if res == 'A' or res == 'a':
             flag = False
-            runEntry(util.getCurrentID())
+            run_entry(util.get_current_id())
         elif res == 'X' or res == 'x':
             flag = False
+        else:
+            input('Incorrect option selected. Please try again!')
 
 
-def runEntry(current_id):
-    util.clearScreen()
-    gui.registrationBox()
+def run_entry(current_id):
+    util.clear_screen()
+    gui.registration_box()
 
     employee = {
         'id' : '',
@@ -64,10 +66,12 @@ def runEntry(current_id):
     while flag == True:
         res = input('Save? [Y/N], Type [C] to Cancel: ')
         if res == 'Y' or res == 'y':
-            saveEntry(current_id, employee)
+            save_entry(current_id, employee)
             flag = False
         elif res == 'N' or res == 'n':
-            runEntry(util.getCurrentID())
+            run_entry(util.get_current_id())
             flag = False
         elif res == 'C' or res == 'c':
             flag = False
+        else:
+            input('Incorrect option selected. Please try again!')

@@ -8,20 +8,20 @@ import modules.textgui as gui
 import registration as reg
 
 # selection control
-loop_flag = False
-while loop_flag == False:
-    util.clearScreen()
-    gui.mainOptionBox()
+flag = True
+while flag == True:
+    util.clear_screen()
+    gui.main_option_box()
     select = input('Select your option: ')
 
     if select == '1':
-        reg.initReg()
+        reg.init_reg()
     elif select == '2':
         print('option 2 run you modules here!')
-        loop_flag = True
+        flag = False
     elif select == '3':
         print('option 3 run you modules here!')
-        loop_flag = True
+        flag = False
     else:
         input('Incorrect option selected. Please try again!')
         

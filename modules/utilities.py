@@ -6,13 +6,13 @@
 import pathlib as path
 import os as os
 
-def clearScreen():
+def clear_screen():
     if os.name == 'nt':
         os.system('cls')
     else:
         os.system('clear')
 
-def getCurrentID():
+def get_current_id():
     raw_path = path.Path('./flat_files/')
     file_to_open = raw_path / 'id.txt'  
 
@@ -21,7 +21,7 @@ def getCurrentID():
     id_file.close()
     return int(current_id[12])
 
-def updateCurrentID(current_id):
+def update_current_id(current_id):
     raw_path = path.Path('./flat_files/')
     file_to_open = raw_path / 'id.txt'
 
