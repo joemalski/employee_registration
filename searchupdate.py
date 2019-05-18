@@ -9,6 +9,5 @@ import modules.textgui as gui
 
 def init_search_update():
     util.clear_screen()
-    gui.search_update_box();
-    
+    gui.search_update_box()
     
