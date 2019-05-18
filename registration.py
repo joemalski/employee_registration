@@ -8,21 +8,28 @@ import modules.utilities as util
 import modules.textgui as gui
 
 def initReg():
-    raw_path = path.Path('./flat_files/')
-    file_to_open = raw_path / 'id.txt'
-    
-    id_file = open(file_to_open, 'r')
-    current_id = id_file.readline()
-    runEntry(current_id[12])
-    id_file.close()
+    runEntry(util.getCurrentID())    
 
-def writeEntry(current_id, employee):
+def saveEntry(current_id, employee):
     raw_path = path.Path('./flat_files/')
     file_to_open = raw_path / 'employee.txt'
     
     emp_file = open(file_to_open, 'a')
     emp_file.write(str(employee)+',')
     emp_file.close()
+    util.updateCurrentID(current_id)
+    
+    print()
+    flag = True
+    while flag == True:
+        res = input('[A] - Add another Record [X] - Exit Registration: ')
+        print('res: ', res)
+        if res == 'A' or res == 'a':
+            flag = False
+            runEntry(util.getCurrentID())
+        elif res == 'X' or res == 'x':
+            flag = False
+
 
 def runEntry(current_id):
     util.clearScreen()
@@ -55,13 +62,12 @@ def runEntry(current_id):
 
     flag = True
     while flag == True:
-        res = input('Save? Y/N, Type C to cancel: ')
+        res = input('Save? [Y/N], Type [C] to Cancel: ')
         if res == 'Y' or res == 'y':
-            print('save')
-            writeEntry(current_id, employee)
+            saveEntry(current_id, employee)
             flag = False
         elif res == 'N' or res == 'n':
-            runEntry(current_id)
+            runEntry(util.getCurrentID())
             flag = False
         elif res == 'C' or res == 'c':
             flag = False

@@ -16,7 +16,6 @@ while loop_flag == False:
 
     if select == '1':
         reg.initReg()
-        loop_flag = True
     elif select == '2':
         print('option 2 run you modules here!')
         loop_flag = True
