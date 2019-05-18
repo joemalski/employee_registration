@@ -5,6 +5,7 @@
 
 import pathlib as path
 import os as os
+import ast
 
 def clear_screen():
     if os.name == 'nt':
@@ -30,4 +31,8 @@ def update_current_id(current_id):
     current_id = 'current_id: ' + current_id
     id_file.write(current_id)
     id_file.close()
+
+def str_to_dict(str):
+    clean_str = str.replace('"', "\"")
+    return ast.literal_eval(str)
 

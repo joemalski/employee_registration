@@ -15,7 +15,7 @@ def save_entry(current_id, employee):
     file_to_open = raw_path / 'employee.txt'
     
     emp_file = open(file_to_open, 'a')
-    emp_file.write(str(employee)+',')
+    emp_file.write(str(employee)+'\n')
     emp_file.close()
     util.update_current_id(current_id)
     
@@ -38,15 +38,15 @@ def run_entry(current_id):
     gui.registration_box()
 
     employee = {
-        'id' : '',
-        'first_name' : '',
-        'last_name' : '',
-        'gender' : '',
-        'birthdate' : '',
-        'street' : '',
-        'city' : '',
-        'state' : '',
-        'zip_code' : ''
+        'id': '',
+        'first_name': '',
+        'last_name': '',
+        'gender': '',
+        'birthdate': '',
+        'street': '',
+        'city': '',
+        'state': '',
+        'zip_code': ''
     }
 
     print()
@@ -64,7 +64,7 @@ def run_entry(current_id):
 
     flag = True
     while flag == True:
-        res = input('Save? [Y/N], Type [C] to Cancel: ')
+        res = input('Save [Y/N], Cancel [C]: ')
         if res == 'Y' or res == 'y':
             save_entry(current_id, employee)
             flag = False
