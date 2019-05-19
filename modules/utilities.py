@@ -79,6 +79,24 @@ def replace_line(line_num, str):
     out.writelines(lines)
     out.close
 
+def show_all_employees():
+    raw_path = path.Path('./flat_files/')
+    file_to_open = raw_path / 'employee.txt'
+    employee_file = open(file_to_open, 'r')
+
+    print()
+    for employee in employee_file.readlines():
+        employee = employee[0:len(employee)-1]
+        dict_employee = str_to_dict(employee)
+        print('ID: '+str(dict_employee['id'])+'\n'+
+            'Name: '+dict_employee['first_name']+' '+dict_employee['last_name']+'\n'+
+            'Gender: '+dict_employee['gender']+'\n'+
+            'DOB: '+dict_employee['birthdate']+'\n'+
+            'Addr: '+dict_employee['street']+' '+dict_employee['city']+' '+dict_employee['state']+' '+
+            dict_employee['zip_code']+'\n')
+
+    input('Press enter to continue...')
+
 
 
 

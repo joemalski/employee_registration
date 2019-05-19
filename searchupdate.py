@@ -24,7 +24,7 @@ def init_search_update():
             else:
                 select_edit_option(id, check_id[1])
         elif res == '2':
-            input('You selected: 2, Show All Employee')
+            util.show_all_employees()
         elif res == '3':
             flag = False
         else:
