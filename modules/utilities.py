@@ -46,7 +46,6 @@ def check_emp_id(id, print_option):
         employee = employee[0:len(employee)-1]
         dict_employee = str_to_dict(employee)
         if id == dict_employee['id'] and print_option == False:
-            line_num += 1
             employee_file.close()
             return [True, line_num]
         elif id == dict_employee['id'] and print_option == True:
@@ -63,9 +62,10 @@ def check_emp_id(id, print_option):
             print('State:', dict_employee['state'])
             print('Zipcode:', dict_employee['zip_code'])
             print('----------------------------------------------------')
-            line_num += 1
             employee_file.close()
             return [True, line_num]
+        else:
+            line_num += 1
 
     employee_file.close()
     return [False]

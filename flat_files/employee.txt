@@ -1,2 +1,0 @@
-{'id': 1, 'first_name': 'Joel', 'last_name': 'Malinao', 'gender': 'M', 'birthdate': '2/19/2018', 'street': '1st Street', 'city': 'Cebu', 'state': 'Cebu', 'zip_code': '6000'}
-{'id': 7, 'first_name': 'John', 'last_name': 'Wick', 'gender': 'M', 'birthdate': '7/8/9000', 'street': 'Soso St.', 'city': 'New Jersey', 'state': 'NJ', 'zip_code': '1234'}
