@@ -39,30 +39,42 @@ def str_to_dict(str):
 def check_emp_id(id, print_option):
     raw_path = path.Path('./flat_files/')
     file_to_open = raw_path / 'employee.txt'
-    employee_file = open(file_to_open, 'r+')
+    employee_file = open(file_to_open, 'r')
 
     for employee in employee_file.readlines():
         employee = employee[0:len(employee)-1]
         dict_employee = str_to_dict(employee)
         if id == dict_employee['id'] and print_option == False:
+            employee_file.close()
             return True
         elif id == dict_employee['id'] and print_option == True:
             print('----------------------------------------------------')
             print('            E m p l o y e e   F o u n d  !          ')
             print('----------------------------------------------------')
-            print('ID: ', dict_employee['id'])
-            print('Firstname: ', dict_employee['first_name'])
-            print('Lastname: ', dict_employee['last_name'])
-            print('Gender: ', dict_employee['gender'])
-            print('Birthdate: ', dict_employee['birthdate'])
-            print('Street: ', dict_employee['street'])
-            print('City: ', dict_employee['city'])
-            print('State: ', dict_employee['state'])
-            print('Zipcode: ', dict_employee['zip_code'])
+            print('ID:', dict_employee['id'])
+            print('Firstname:', dict_employee['first_name'])
+            print('Lastname:', dict_employee['last_name'])
+            print('Gender:', dict_employee['gender'])
+            print('Birthdate:', dict_employee['birthdate'])
+            print('Street:', dict_employee['street'])
+            print('City:', dict_employee['city'])
+            print('State:', dict_employee['state'])
+            print('Zipcode:', dict_employee['zip_code'])
             print('----------------------------------------------------')
+            employee_file.close()
             return True
+
+    employee_file.close()
     return False
 
+def replace_line(line_num, str):
+    raw_path = path.Path('./flat_files/')
+    file_to_open = raw_path / 'employee.txt'
+    lines = open(file_to_open, 'r').readlines()
+    lines[line_num] = str
+    out = open(file_to_open, 'w')
+    out.writelines(lines)
+    out.close
 
 
 

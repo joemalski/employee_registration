@@ -22,44 +22,75 @@ def init_search_update():
             if check_id == False:
                 input('ID: '+id+' is NOT Found! Press Enter to try again...')
             else:
-                input()
+                select_edit_option(id)
         elif res == '2':
-            input('You selected: 2')
+            input('You selected: 2, Show All Employee')
         elif res == '3':
             flag = False
         else:
             input('Incorrect option selected. Please try again!')
 
 
+def select_edit_option(id):
+    print()
+    res = input('[U] - Update, [D] - Delete, [C] - Cancel: ')
+    flag = True
+    while flag == True:
+        if res == 'U' or res == 'u':
+            edit(id)
+            flag=False
+        elif res == 'D' or res == 'd':
+            input('selected d')
+            flag = False
+        elif res == 'C' or res == 'c':
+            input('selected c')
+            flag = False
+        else:
+            input('Incorrect option selected. Please try again!')
 
-    '''
-    raw_path = path.Path('./flat_files/')
-    file_to_open = raw_path / 'employee.txt'
-    employee_file = open(file_to_open, 'r+')
-    id_found = False
-    for employee in employee_file.readlines():
-        employee = employee[0:len(employee)-1]
-        dict_employee = util.str_to_dict(employee)
-        if id == dict_employee['id']:
-            print()
-            print('ID: ', dict_employee['id'])
-            print('Firstname: ', dict_employee['first_name'])
-            print('Lastname: ', dict_employee['last_name'])
-            print('Gender: ', dict_employee['gender'])
-            print('Birthdate: ', dict_employee['birthdate'])
-            print('Street: ', dict_employee['street'])
-            print('City: ', dict_employee['city'])
-            print('State: ', dict_employee['state'])
-            print('Zipcode: ', dict_employee['zip_code'])
-            id_found = True
-            break
+def edit(id):
 
-    if id_found == False:
-        input('ID: '+str(id)+' is not found!, Press enter to continue...')
-    else:
-        print()
-        res = input('Update [U], Delete [D], Cancel [C]: ')
-    '''
+    edit_employee = {
+        'id': '',
+        'first_name': '',
+        'last_name': '',
+        'gender': '',
+        'birthdate': '',
+        'street': '',
+        'city': '',
+        'state': '',
+        'zip_code': ''
+    }
+
+    print()
+    print('---Update Employee Records---')
+    print('ID: ', id)
+    edit_employee['id'] = int(id)
+    edit_employee['first_name'] = input('Firstname: ')
+    edit_employee['last_name'] = input('Lastname: ')
+    edit_employee['gender'] = input('Gender: ')
+    edit_employee['birthdate'] = input('Birthdate: ')
+    edit_employee['street'] = input('Street: ')
+    edit_employee['city'] = input('City: ')
+    edit_employee['state'] = input('State: ')
+    edit_employee['zip_code'] = input('Zipcode: ')
+
+    print()
+    res = input('Save [Y/N]: ')
+    flag = True
+    while flag == True:
+        if res == 'Y' or res == 'y':
+            util.replace_line(int(id)-1, str(edit_employee)+'\n')
+            flag=False
+        elif res == 'N' or res == 'n':
+            input('selected n')
+            flag = False
+        else:
+            input('Incorrect option selected. Please try again!')
+
+
+
+
 
 
 
