@@ -19,10 +19,10 @@ def init_search_update():
         if res == '1':
             id = input('Enter ID: ')
             check_id = util.check_emp_id(int(id), True)
-            if check_id == False:
+            if check_id[0] == False:
                 input('ID: '+id+' is NOT Found! Press Enter to try again...')
             else:
-                select_edit_option(id)
+                select_edit_option(id, check_id[1])
         elif res == '2':
             input('You selected: 2, Show All Employee')
         elif res == '3':
@@ -31,24 +31,23 @@ def init_search_update():
             input('Incorrect option selected. Please try again!')
 
 
-def select_edit_option(id):
+def select_edit_option(id, line_num):
     print()
-    res = input('[U] - Update, [D] - Delete, [C] - Cancel: ')
     flag = True
     while flag == True:
+        res = input('[U] - Update, [D] - Delete, [C] - Cancel: ')
         if res == 'U' or res == 'u':
-            edit(id)
+            edit(id, line_num)
             flag=False
         elif res == 'D' or res == 'd':
             input('selected d')
             flag = False
         elif res == 'C' or res == 'c':
-            input('selected c')
             flag = False
         else:
             input('Incorrect option selected. Please try again!')
 
-def edit(id):
+def edit(id, line_num):
 
     edit_employee = {
         'id': '',
@@ -76,14 +75,13 @@ def edit(id):
     edit_employee['zip_code'] = input('Zipcode: ')
 
     print()
-    res = input('Save [Y/N]: ')
     flag = True
     while flag == True:
+        res = input('Save [Y/N]: ')
         if res == 'Y' or res == 'y':
-            util.replace_line(int(id)-1, str(edit_employee)+'\n')
+            util.replace_line(line_num, str(edit_employee)+'\n')
             flag=False
         elif res == 'N' or res == 'n':
-            input('selected n')
             flag = False
         else:
             input('Incorrect option selected. Please try again!')
