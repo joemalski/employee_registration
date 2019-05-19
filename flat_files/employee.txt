@@ -1,3 +1,2 @@
-{'id': 1, 'first_name': 'Joel', 'last_name': 'Malinao', 'gender': 'M', 'birthdate': '8/28/1981', 'street': 'New Sambag II N.A.I. Kalubihan Kalunasan', 'city': 'Cebu City', 'state': 'Cebu', 'zip_code': '6000'}
-{'id': 2, 'first_name': 'Julieta', 'last_name': 'Bayer', 'gender': 'F', 'birthdate': '6/7/1981', 'street': 'Bolocboloc St.', 'city': 'Barili', 'state': 'Cebu', 'zip_code': '12345'}
-{'id': 3, 'first_name': 'Kyle Angelo', 'last_name': 'Malinao', 'gender': 'M', 'birthdate': '12/5/2006', 'street': 'Capito Site', 'city': 'Cebu City', 'state': 'Cebu', 'zip_code': '6000'}
+{'id': 1, 'first_name': 'Joel', 'last_name': 'Malinao', 'gender': 'M', 'birthdate': '2/19/2018', 'street': '1st Street', 'city': 'Cebu', 'state': 'Cebu', 'zip_code': '6000'}
+{'id': 3, 'first_name': 'Kyle Angelo', 'last_name': 'Malinao', 'gender': 'M', 'birthdate': '7/2/2901', 'street': 'test ra', 'city': 'cebu', 'state': 'cebu', 'zip_code': '1234'}

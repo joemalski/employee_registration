@@ -40,12 +40,15 @@ def select_edit_option(id, line_num):
             edit(id, line_num)
             flag=False
         elif res == 'D' or res == 'd':
-            input('selected d')
+            delete(line_num)
             flag = False
         elif res == 'C' or res == 'c':
             flag = False
         else:
             input('Incorrect option selected. Please try again!')
+
+def delete(line_num):
+    util.replace_line(line_num, '')
 
 def edit(id, line_num):
 
