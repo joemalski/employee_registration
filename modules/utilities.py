@@ -45,10 +45,10 @@ def check_emp_id(id, print_option):
     for employee in employee_file.readlines():
         employee = employee[0:len(employee)-1]
         dict_employee = str_to_dict(employee)
-        if id == dict_employee['id'] and print_option == False:
+        if id == str(dict_employee['id']) and print_option == False:
             employee_file.close()
             return [True, line_num]
-        elif id == dict_employee['id'] and print_option == True:
+        elif id == str(dict_employee['id']) and print_option == True:
             print('----------------------------------------------------')
             print('            E m p l o y e e   F o u n d  !          ')
             print('----------------------------------------------------')

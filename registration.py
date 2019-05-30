@@ -22,12 +22,11 @@ def save_entry(current_id, employee):
     print()
     flag = True
     while flag == True:
-        res = input('[A] - Add another Record [X] - Exit Registration: ')
-        print('res: ', res)
-        if res == 'A' or res == 'a':
+        res = (input('[A] - Add another Record [X] - Exit Registration: ')).lower()
+        if res == 'a':
             flag = False
             run_entry(util.get_current_id())
-        elif res == 'X' or res == 'x':
+        elif res == 'x':
             flag = False
         else:
             input('Incorrect option selected. Please try again!')
@@ -64,14 +63,14 @@ def run_entry(current_id):
 
     flag = True
     while flag == True:
-        res = input('Save [Y/N], Cancel [C]: ')
-        if res == 'Y' or res == 'y':
+        res = (input('Save [Y/N], Cancel [C]: ')).lower()
+        if res == 'y':
             save_entry(current_id, employee)
             flag = False
-        elif res == 'N' or res == 'n':
+        elif res == 'n':
             run_entry(util.get_current_id())
             flag = False
-        elif res == 'C' or res == 'c':
+        elif res == 'c':
             flag = False
         else:
             input('Incorrect option selected. Please try again!')

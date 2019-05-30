@@ -18,7 +18,7 @@ def init_search_update():
 
         if res == '1':
             id = input('Enter ID: ')
-            check_id = util.check_emp_id(int(id), True)
+            check_id = util.check_emp_id(id, True)
             if check_id[0] == False:
                 input('ID: '+id+' is NOT Found! Press Enter to try again...')
             else:
@@ -35,14 +35,14 @@ def select_edit_option(id, line_num):
     print()
     flag = True
     while flag == True:
-        res = input('[U] - Update, [D] - Delete, [C] - Cancel: ')
-        if res == 'U' or res == 'u':
+        res = (input('[U] - Update, [D] - Delete, [C] - Cancel: ')).lower()
+        if res == 'u':
             edit(id, line_num)
             flag=False
-        elif res == 'D' or res == 'd':
+        elif res == 'd':
             delete(line_num)
             flag = False
-        elif res == 'C' or res == 'c':
+        elif res == 'c':
             flag = False
         else:
             input('Incorrect option selected. Please try again!')
@@ -80,11 +80,11 @@ def edit(id, line_num):
     print()
     flag = True
     while flag == True:
-        res = input('Save [Y/N]: ')
-        if res == 'Y' or res == 'y':
+        res = (input('Save [Y/N]: ')).lower()
+        if res == 'y':
             util.replace_line(line_num, str(edit_employee)+'\n')
             flag=False
-        elif res == 'N' or res == 'n':
+        elif res == 'n':
             flag = False
         else:
             input('Incorrect option selected. Please try again!')
