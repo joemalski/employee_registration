@@ -4,6 +4,7 @@
 - Utilizes functions, procedural-style coding.
 
 To run the program:
+
 $ python3 main.py
 
 To reset the program:
