@@ -83,6 +83,7 @@ def show_all_employees():
     raw_path = path.Path('./flat_files/')
     file_to_open = raw_path / 'employee.txt'
     employee_file = open(file_to_open, 'r')
+    rec_length = 0
 
     print()
     for employee in employee_file.readlines():
@@ -94,8 +95,13 @@ def show_all_employees():
             'DOB: '+dict_employee['birthdate']+'\n'+
             'Addr: '+dict_employee['street']+' '+dict_employee['city']+' '+dict_employee['state']+' '+
             dict_employee['zip_code']+'\n')
+        rec_length = 1
 
-    input('Press enter to continue...')
+    if rec_length == 1:
+        input('Press enter to continue...')
+    else:
+        input('No records found! Press enter to continue...')
+
 
 
 

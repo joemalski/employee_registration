@@ -1,0 +1,5 @@
+{'id': 1, 'first_name': 'Keith', 'last_name': 'Radcliff', 'gender': 'Male', 'birthdate': '8/26/1978', 'street': '935 Ridgewood St.', 'city': 'Piscataway', 'state': 'NJ', 'zip_code': '08854'}
+{'id': 2, 'first_name': 'James', 'last_name': 'Tolentino', 'gender': 'Male', 'birthdate': '12/17/1981', 'street': '985 Fermont St.', 'city': 'Saint Cloud', 'state': 'MN', 'zip_code': '02132'}
+{'id': 3, 'first_name': 'Janice', 'last_name': 'Smith', 'gender': 'Female', 'birthdate': '9/12/1985', 'street': '14 Hartford St.', 'city': 'Wadsworth', 'state': 'OH', 'zip_code': '44281'}
+{'id': 4, 'first_name': 'Alexa', 'last_name': 'Reyes', 'gender': 'Female', 'birthdate': '6/29/1994', 'street': '5 Temple Ln.', 'city': 'Glendora', 'state': 'CA', 'zip_code': '91740'}
+{'id': 5, 'first_name': 'Charles', 'last_name': 'Robertson', 'gender': 'Male', 'birthdate': '5/4/1969', 'street': '14 Hartford St.', 'city': 'Mundelein', 'state': 'IL', 'zip_code': '60060'}
