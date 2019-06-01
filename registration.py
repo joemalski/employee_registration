@@ -20,14 +20,13 @@ def save_entry(current_id, employee):
     util.update_current_id(current_id)
     
     print()
-    flag = True
-    while flag == True:
+    while 1:
         res = (input('[A] - Add another Record [X] - Exit Registration: ')).lower()
         if res == 'a':
-            flag = False
+            break
             run_entry(util.get_current_id())
         elif res == 'x':
-            flag = False
+            break
         else:
             input('Incorrect option selected. Please try again!')
 
@@ -61,16 +60,15 @@ def run_entry(current_id):
     employee['zip_code'] = input('Zipcode: ')
     print()
 
-    flag = True
-    while flag == True:
+    while 1:
         res = (input('Save [Y/N], Cancel [C]: ')).lower()
         if res == 'y':
             save_entry(current_id, employee)
-            flag = False
+            break
         elif res == 'n':
             run_entry(util.get_current_id())
-            flag = False
+            break
         elif res == 'c':
-            flag = False
+            break
         else:
             input('Incorrect option selected. Please try again!')

@@ -9,8 +9,7 @@ import registration as reg
 import searchupdate as search
 
 # selection control
-flag = True
-while flag == True:
+while 1:
     util.clear_screen()
     gui.main_option_box()
     res = input('Select your option: ')
@@ -21,7 +20,7 @@ while flag == True:
         search.init_search_update()
     elif res == '3':
         print('Bye!')
-        flag = False
+        break
     else:
         input('Incorrect option selected. Please try again!')
         

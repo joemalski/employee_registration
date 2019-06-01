@@ -10,8 +10,7 @@ import modules.textgui as gui
 def init_search_update():
 
     # selection control
-    flag = True
-    while flag == True:
+    while 1:
         util.clear_screen()
         gui.search_update_box()
         res = input('Select your option: ')
@@ -26,24 +25,23 @@ def init_search_update():
         elif res == '2':
             util.show_all_employees()
         elif res == '3':
-            flag = False
+            break
         else:
             input('Incorrect option selected. Please try again!')
 
 
 def select_edit_option(id, line_num):
     print()
-    flag = True
-    while flag == True:
+    while 1:
         res = (input('[U] - Update, [D] - Delete, [C] - Cancel: ')).lower()
         if res == 'u':
             edit(id, line_num)
-            flag=False
+            break
         elif res == 'd':
             delete(line_num)
-            flag = False
+            break
         elif res == 'c':
-            flag = False
+            break
         else:
             input('Incorrect option selected. Please try again!')
 
@@ -78,14 +76,13 @@ def edit(id, line_num):
     edit_employee['zip_code'] = input('Zipcode: ')
 
     print()
-    flag = True
-    while flag == True:
+    while 1:
         res = (input('Save [Y/N]: ')).lower()
         if res == 'y':
             util.replace_line(line_num, str(edit_employee)+'\n')
-            flag=False
+            break
         elif res == 'n':
-            flag = False
+            break
         else:
             input('Incorrect option selected. Please try again!')
 
